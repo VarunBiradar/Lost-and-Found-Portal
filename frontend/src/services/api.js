@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:8080/api';
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8080/api';
 
 const getHeaders = (includeAuth = false) => {
   const headers = { 'Content-Type': 'application/json' };
@@ -12,9 +12,21 @@ const getHeaders = (includeAuth = false) => {
 };
 
 const handleResponse = async (response) => {
-  const data = await response.json();
+  const text = await response.text();
+  let data;
+  try {
+    data = text ? JSON.parse(text) : {};
+  } catch (err) {
+    data = { message: text };
+  }
+
   if (!response.ok) {
-    throw new Error(data.error || data.message || 'Something went wrong');
+    if (response.status === 401 || response.status === 403) {
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      window.location.href = '/login';
+    }
+    throw new Error(data.error || data.message || `Request failed with status ${response.status}`);
   }
   return data;
 };

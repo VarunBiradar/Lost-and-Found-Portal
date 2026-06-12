@@ -56,6 +56,50 @@ export default function Home() {
         </div>
       </section>
 
+      {/* About Section */}
+      <section className="about-section">
+        <div className="container">
+          <div className="about-content glass-card">
+            <h2 className="section-title">What is Lost & Found Portal?</h2>
+            <p className="about-text">
+              Losing personal belongings can be stressful, but our platform is here to help. We provide a centralized, secure, and community-driven space where people can report items they've lost, and honest finders can list items they've discovered.
+              <br /><br />
+              Our goal is to create a seamless bridge between you and your lost items through transparent claims, real-time tracking, and organized categories. Together, we can build a community built on trust and help each other recover what matters.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="features-section">
+        <div className="container">
+          <h2 className="section-title">Key Features</h2>
+          <p className="section-subtitle">Everything you need to find and claim your belongings</p>
+          <div className="features-grid">
+            <div className="feature-card glass-card">
+              <div className="feature-icon">🔍</div>
+              <h3>Smart Search & Filters</h3>
+              <p>Easily find items using keyword search and organized categories like Electronics, Documents, and more.</p>
+            </div>
+            <div className="feature-card glass-card">
+              <div className="feature-icon">🔐</div>
+              <h3>Secure Claims</h3>
+              <p>Submit proof of ownership securely to claim your items. Finders can review and approve claims.</p>
+            </div>
+            <div className="feature-card glass-card">
+              <div className="feature-icon">⚡</div>
+              <h3>Real-Time Updates</h3>
+              <p>Keep track of your reported items and monitor claim statuses directly from your personalized dashboard.</p>
+            </div>
+            <div className="feature-card glass-card">
+              <div className="feature-icon">🤝</div>
+              <h3>Community Driven</h3>
+              <p>A platform built on honesty. Help others by reporting items you find around your campus or city.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Stats Section */}
       {stats && (
         <section className="stats-section">
